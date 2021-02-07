@@ -3,9 +3,6 @@ stages:
 my_deploy:
   image: alyun_oss_hh:v1
   stage: deploy
-  cache:
-    paths:
-      - dist
   script:
     - /ossutil rm oss://wechat-aliyun/${CI_PROJECT_NAME}/dist -r -f
     - /ossutil cp -r dist oss://wechat-aliyun/${CI_PROJECT_NAME}/dist
